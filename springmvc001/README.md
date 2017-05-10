@@ -4,7 +4,7 @@ Springmvc入门架子搭建
 
 一、pom.xml文件参考
 -------------------
-    ```
+    
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
         <modelVersion>4.0.0</modelVersion>
@@ -78,7 +78,7 @@ Springmvc入门架子搭建
             <finalName>springmvc001</finalName>
         </build>
     </project>
-    ```
+    
 二、Springmvc配置文件spring-servlet.xml参考
 -------------------
    ```
