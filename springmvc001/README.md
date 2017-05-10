@@ -203,3 +203,56 @@ Springmvc入门架子搭建
        }
 
    ```
+   
+五、乱码问题；
+-------
+
+1、请求参数乱码
+在web.xml文件加入如下配置后只是对post请求的乱码有效，
+
+    ```
+        <filter>
+            <filter-name>EncodingFilter</filter-name>
+            <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+            <init-param>
+                <param-name>encoding</param-name>
+                <param-value>UTF-8</param-value>
+            </init-param>
+            <init-param>
+                <param-name>forceEncoding</param-name>
+                <param-value>true</param-value>
+            </init-param>
+        </filter>
+    
+        <filter-mapping>
+            <filter-name>EncodingFilter</filter-name>
+            <url-pattern>/*</url-pattern>
+        </filter-mapping>
+    
+    ```
+  
+增加对GET请求的支持，在tomcat的server.xml文件中加入URIEncoding="UTF-8"
+
+  ```
+  <Connector port="8080" protocol="HTTP/1.1"
+                 URIEncoding="UTF-8"
+                 connectionTimeout="20000"
+                 redirectPort="8443" />               
+  ```
+  
+2、响应乱码
+
+在spring-mvc的配置文件spring-servlet.xml文件加入如下代码：
+
+```
+    <!--start 解决响应乱码的问题，注意要放在<mvc:annotation-driven/>之前-->
+    <mvc:annotation-driven>
+        <!-- 消息转换器 -->
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--end 解决响应乱码的问题，注意要放在<mvc:annotation-driven/>之前-->
+```

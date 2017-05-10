@@ -7,7 +7,14 @@
          version="3.0">
     <display-name>Archetype Created Web Application</display-name>
 
-    <!-- start 配置过滤器，同时把所有的请求都转为utf-8编码 -->
+    <!-- start 配置过滤器，同时把所有的请求都转为utf-8编码 该配置只对POST有效-->
+    <!--
+    增加对GET请求的支持，在tomcat的server.xml文件中加入URIEncoding="UTF-8"
+    <Connector port="8080" protocol="HTTP/1.1"
+               URIEncoding="UTF-8"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    -->
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

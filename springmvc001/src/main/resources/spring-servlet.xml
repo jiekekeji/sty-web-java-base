@@ -13,9 +13,6 @@
     <!-- 自动扫描  @Controller-->
     <context:component-scan base-package="com.jk.controller"/>
 
-    <!-- springMVC开启注解 -->
-    <mvc:annotation-driven/>
-
     <!-- 文件上传配置 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 默认编码 -->
@@ -26,6 +23,22 @@
         <property name="maxInMemorySize" value="4096"/>
     </bean>
 
+    <!--start 解决响应乱码的问题，注意要放在<mvc:annotation-driven/>之前-->
+    <mvc:annotation-driven>
+        <!-- 消息转换器 -->
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--end 解决响应乱码的问题，注意要放在<mvc:annotation-driven/>之前-->
+
+    <!-- springMVC开启注解 -->
+    <mvc:annotation-driven/>
+
     <!-- start添加静态资源的访问映射 -->
     <mvc:resources mapping="/static/**/" location="/static/"/>
+
+
 </beans>
