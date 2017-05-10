@@ -5,79 +5,79 @@ Springmvc入门架子搭建
 一、pom.xml文件参考
 -------------------
     ```
-        <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-            <modelVersion>4.0.0</modelVersion>
-            <groupId>com.jk</groupId>
-            <artifactId>springmvc001</artifactId>
-            <packaging>war</packaging>
-            <version>1.0-SNAPSHOT</version>
-            <name>springmvc001 Maven Webapp</name>
-            <url>http://maven.apache.org</url>
-            <dependencies>
-                <!--start 单元测试需要的包、-->
-                <dependency>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                    <version>3.8.1</version>
-                    <scope>test</scope>
-                </dependency>
-                <!--end 单元测试需要的包、-->
-                <!--start spring需要的jar包 -->
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-context</artifactId>
-                    <version>3.2.4.RELEASE</version>
-                    <type>jar</type>
-                </dependency>
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.jk</groupId>
+        <artifactId>springmvc001</artifactId>
+        <packaging>war</packaging>
+        <version>1.0-SNAPSHOT</version>
+        <name>springmvc001 Maven Webapp</name>
+        <url>http://maven.apache.org</url>
+        <dependencies>
+            <!--start 单元测试需要的包、-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.1</version>
+                <scope>test</scope>
+            </dependency>
+            <!--end 单元测试需要的包、-->
+            <!--start spring需要的jar包 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>3.2.4.RELEASE</version>
+                <type>jar</type>
+            </dependency>
 
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-core</artifactId>
-                    <version>3.2.4.RELEASE</version>
-                    <type>jar</type>
-                </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>3.2.4.RELEASE</version>
+                <type>jar</type>
+            </dependency>
 
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-beans</artifactId>
-                    <version>3.2.4.RELEASE</version>
-                    <type>jar</type>
-                </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>3.2.4.RELEASE</version>
+                <type>jar</type>
+            </dependency>
 
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-webmvc</artifactId>
-                    <version>3.2.4.RELEASE</version>
-                    <type>jar</type>
-                </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>3.2.4.RELEASE</version>
+                <type>jar</type>
+            </dependency>
 
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-orm</artifactId>
-                    <version>3.2.4.RELEASE</version>
-                    <type>jar</type>
-                </dependency>
-                <!--end spring需要的jar包 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>3.2.4.RELEASE</version>
+                <type>jar</type>
+            </dependency>
+            <!--end spring需要的jar包 -->
 
-                <!--start 文件上传需要的jar包 -->
-                <dependency>
-                    <groupId>commons-fileupload</groupId>
-                    <artifactId>commons-fileupload</artifactId>
-                    <version>1.2.1</version>
-                </dependency>
+            <!--start 文件上传需要的jar包 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>1.2.1</version>
+            </dependency>
 
-                <dependency>
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                    <version>1.4</version>
-                </dependency>
-                <!--end 文件上传需要的jar包 -->
-            </dependencies>
-            <build>
-                <finalName>springmvc001</finalName>
-            </build>
-        </project>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>1.4</version>
+            </dependency>
+            <!--end 文件上传需要的jar包 -->
+        </dependencies>
+        <build>
+            <finalName>springmvc001</finalName>
+        </build>
+    </project>
     ```
 二、Springmvc配置文件spring-servlet.xml参考
 -------------------
