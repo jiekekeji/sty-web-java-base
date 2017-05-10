@@ -26,4 +26,6 @@
         <property name="maxInMemorySize" value="4096"/>
     </bean>
 
+    <!-- start添加静态资源的访问映射 -->
+    <mvc:resources mapping="/static/**/" location="/static/"/>
 </beans>
