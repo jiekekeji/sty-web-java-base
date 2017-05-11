@@ -31,11 +31,13 @@ public class CtrlAdmin {
     @RequestMapping(value = "resp1", method = RequestMethod.GET)
     public ModelAndView resp1(String id, String name) {
         ModelAndView mv = new ModelAndView();
+
         mv.setViewName("resp1");
 
         User user = new User();
         user.setId("123");
         user.setName("杰克");
+
         mv.addObject(user);
 
         System.out.println(user);

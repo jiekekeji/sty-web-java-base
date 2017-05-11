@@ -92,15 +92,14 @@ public class CtrlUser {
     }
 
     /**
-     * 接收json字符串，将json转为bean
+     * @param user
+     * @return
+     * @RequestBody 接收json字符串，将json转为bean
      * 注解:@RequestBody User user
      * 需要jackson包,
      * 客户端请求时需在header加：Content-Type=application/json
      * 参数方式:
      * {"id":"123","name":"rose"}
-     *
-     * @param user
-     * @return
      */
     @RequestMapping(value = "register6", method = RequestMethod.POST)
     @ResponseBody
@@ -174,6 +173,12 @@ public class CtrlUser {
     }
 
 
+    /**
+     * 多文件上传
+     *
+     * @param files
+     * @return
+     */
     @RequestMapping(value = "uploadfile2", method = RequestMethod.POST)
     @ResponseBody
     public String loadFile2(@RequestParam("files") MultipartFile[] files) {
