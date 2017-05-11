@@ -76,6 +76,22 @@
         </dependency>
         <!--end 文件上传需要的jar包 -->
 
+        <!--start json转bean，jackson包-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.3</version>
+        </dependency>
+        <!--end json转bean，jackson包-->
+
+        <!--start jstl所需的包-->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!--end jstl所需的包-->
+
     </dependencies>
     <build>
         <finalName>springmvc002</finalName>

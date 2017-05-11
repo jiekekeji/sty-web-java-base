@@ -40,5 +40,7 @@
     <!-- start添加静态资源的访问映射 -->
     <mvc:resources mapping="/static/**/" location="/static/"/>
 
-
+    <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
+    <!--如果Controller返回的是resp1，那么通过视图解析器解析之后的视图就是/jsp/resp1.jsp-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/jsp/" p:suffix=".jsp"/>
 </beans>
