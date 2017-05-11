@@ -19,6 +19,7 @@
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.4.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.1" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:1.4" />
         </element>
