@@ -1,5 +1,6 @@
 package test;
 
+import com.store.model.User;
 import com.store.service.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +23,12 @@ public class UserServiceImplTest {
     @Test
     public void testFindUser1() throws Exception {
         System.out.println("******************");
-        System.out.println(service.findUserByID(1l));
+        User user=new User();
+        user.setId(1l);
+        user.setUsername("大神");
+        user.setPassword("123456");
+        user.setAge(18);
+        System.out.println(service.findUser3(user));
         System.out.println("******************");
     }
 }

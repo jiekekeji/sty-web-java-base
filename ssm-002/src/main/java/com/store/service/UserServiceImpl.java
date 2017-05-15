@@ -165,7 +165,7 @@ public class UserServiceImpl {
         Map<String, Object> map = new HashMap<String, Object>();
 
         UserExample example = new UserExample();
-        //where username=? and age=18
+        //SELECT * from `user`  WHERE age=18 AND username="大神";
         example.or().andUsernameEqualTo(user.getUsername()).andAgeEqualTo(user.getAge());
 
         List<User> users = dao.selectByExample(example);
@@ -181,22 +181,23 @@ public class UserServiceImpl {
     }
 
     /**
-     * 修改用户-多个条件and的查询
+     * BETWEEN  * AND * 查询
      *
      * @param user
      * @return
      */
-    public Map<String, Object> updateUser2(User user) {
+    public Map<String, Object> findUser2(User user) {
         Map<String, Object> map = new HashMap<String, Object>();
 
         UserExample example = new UserExample();
-        example.or().andUsernameEqualTo(user.getUsername()).andAgeEqualTo(user.getAge())
-                .andGenderEqualTo(user.getGender());
+        //SELECT * from `user`  WHERE age BETWEEN 2 AND 20;
+        example.or().andAgeBetween(2, 20);
 
-        int code = dao.updateByExample(user, example);
-        if (code == 1) {
+        List<User> users = dao.selectByExample(example);
+        if (users != null) {
             map.put("code", 2000);
             map.put("desc", "ok");
+            map.put("users", users);
         } else {
             map.put("code", 4000);
             map.put("desc", "eroor");
@@ -204,5 +205,47 @@ public class UserServiceImpl {
         return map;
     }
 
+    /**
+     * @param user
+     * @return
+     */
+    public Map<String, Object> findUser3(User user) {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        UserExample example = new UserExample();
+        //查询年龄小于20的用户
+        example.or().andAgeLessThan(20);
+
+        List<User> users = dao.selectByExample(example);
+        if (users != null) {
+            map.put("code", 2000);
+            map.put("desc", "ok");
+            map.put("users", users);
+        } else {
+            map.put("code", 4000);
+            map.put("desc", "eroor");
+        }
+        return map;
+    }
+
+
+    public Map<String, Object> findUser4(User user) {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        UserExample example = new UserExample();
+        //查询年龄小于20的用户
+//        example.or().andAge(20);
+
+        List<User> users = dao.selectByExample(example);
+        if (users != null) {
+            map.put("code", 2000);
+            map.put("desc", "ok");
+            map.put("users", users);
+        } else {
+            map.put("code", 4000);
+            map.put("desc", "eroor");
+        }
+        return map;
+    }
 
 }
