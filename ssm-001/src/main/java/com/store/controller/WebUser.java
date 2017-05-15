@@ -1,6 +1,5 @@
-package com.store.webfont;
+package com.store.controller;
 
-import com.store.dao.UserDao;
 import com.store.model.User;
 import com.store.service.UserServiceImpl;
 import org.apache.log4j.Logger;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/user")
