@@ -151,6 +151,14 @@
         </dependency>
         <!-- end 添加mybatis/spring整合包依赖 -->
 
+        <!--start mybatis分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+        <!--end mybatis分页插件-->
+
         <!-- start 添加mysql驱动依赖 -->
         <dependency>
             <groupId>mysql</groupId>
