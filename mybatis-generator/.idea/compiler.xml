@@ -22,12 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="mybatis-generator" />
         <module name="ssm-001" />
         <module name="ssm-base" />
         <module name="store" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mybatis-generator" target="1.5" />
       <module name="ssm-001" target="1.5" />
       <module name="ssm-base" target="1.5" />
       <module name="store" target="1.5" />

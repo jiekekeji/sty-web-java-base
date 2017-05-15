@@ -39,7 +39,7 @@
         </javaModelGenerator>
         <!--end Model模型生成器,用来生成含有主键key的类，记录类 以及查询Example类-->
         <!--start Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
-        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis_mapper" targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!--end Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
@@ -49,12 +49,12 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <!--<javaClientGenerator targetPackage="com.store.mapper" targetProject="src/main/java" type="MIXEDMAPPER">-->
-            <!--<property name="enableSubPackages" value=""/>-->
-            <!--<property name="exampleMethodVisibility" value="default"/>-->
-            <!--&lt;!&ndash;为生成的接口添加父接口  &ndash;&gt;-->
-            <!--<property name="rootInterface" value=""/>-->
-        <!--</javaClientGenerator>-->
+        <javaClientGenerator targetPackage="com.store.mapper" targetProject="src/main/java" type="MIXEDMAPPER">
+            <property name="enableSubPackages" value=""/>
+            <property name="exampleMethodVisibility" value="default"/>
+            <!--为生成的接口添加父接口  -->
+            <property name="rootInterface" value=""/>
+        </javaClientGenerator>
         <!--end-->
         <!--start 需要转换的数据库表-->
         <table tableName="user"></table>
