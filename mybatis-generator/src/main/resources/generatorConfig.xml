@@ -73,8 +73,11 @@
 
 
         <!--start 需要转换的数据库表-->
-        <table tableName="user"></table>
+        <table tableName="%"></table>
 
         <!--end 需要转换的数据库表-->
+
+        <!--指定生成的表-->
+        <!--<table tableName="user"></table>-->
     </context>
 </generatorConfiguration>
