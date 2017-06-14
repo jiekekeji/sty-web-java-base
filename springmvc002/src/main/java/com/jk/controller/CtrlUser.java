@@ -225,6 +225,33 @@ public class CtrlUser {
         return "userid=" + userid + "&&" + list.toString();
     }
 
+    /**
+     * 带额外参数的不同类型文件上传
+     *
+     * @param files
+     * @return
+     */
+    @RequestMapping(value = "uploadfile4", method = RequestMethod.POST)
+    @ResponseBody
+    public String loadFile4(String userid, @RequestParam("avatar") MultipartFile avatarFile, @RequestParam("documents") MultipartFile[] files) {
+        List<String> list = new ArrayList<String>();
+        if (files != null && files.length > 0) {
+            //循环获取file数组中得文件
+            for (int i = 0; i < files.length; i++) {
+                MultipartFile file = files[i];
+                if (saveFile(file)) {
+                    list.add("ok");
+                } else {
+                    list.add("fail");
+                }
+            }
+        }
+        //保存avatar
+        saveFile(avatarFile);
+        System.out.println("userid=" + userid);
+        System.out.println(list);
+        return "userid=" + userid + "&&" + list.toString();
+    }
 
     /**
      * 保存上传的文件
